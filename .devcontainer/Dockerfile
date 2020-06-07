@@ -2,7 +2,7 @@ FROM golang:1.14-alpine
 
 RUN apk add --no-cache --virtual .base \
     sudo bash zsh zsh-vcs tmux \
-    curl git vim
+    curl git vim openssh
 
 # fix sudo (https://github.com/sudo-project/sudo/issues/42)
 RUN echo "Set disable_coredump false" >> /etc/sudo.conf
