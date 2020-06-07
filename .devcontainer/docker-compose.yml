@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+    golang-dev:
+        build: .
+        image: tiger/golang-dev
+        hostname: golang-dev
+        volumes:
+            # Update this to wherever you want VS Code to mount the folder of your project
+            - ..:/workspace:cached
+        working_dir: /workspace
+        command: -c 'echo "Now waiting quietly ..." && while sleep 1000; do :; done'
