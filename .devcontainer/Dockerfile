@@ -34,4 +34,6 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh
 COPY configurations/zsh.zshrc ${HOME}/.zshrc
 COPY configurations/_tmux.conf ${HOME}/.tmux.conf
 
+RUN ssh-keyscan -H github.com ${HOME}/.ssh/known_hosts
+
 ENTRYPOINT [ "/bin/zsh" ] 
