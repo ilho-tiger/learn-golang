@@ -1,3 +1,6 @@
+# Default Username
+DEFAULT_USER=docker
+
 ZSH_TMUX_AUTOSTART=false
 ZSH_TMUX_AUTOCONNECT=false
 
@@ -5,7 +8,7 @@ ZSH_TMUX_AUTOCONNECT=false
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/isong/.oh-my-zsh"
+export ZSH="/home/${DEFAULT_USER}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -112,9 +115,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias less="less -r"
 alias tree="tree -C"
-
-# Default Username
-DEFAULT_USER=isong
 
 # redefine prompt_context for hiding user@hostname
 # prompt_context () { }

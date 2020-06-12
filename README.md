@@ -8,30 +8,9 @@ My personal repo as I learn about `golang` along.
 
 ## go tools
 
-`vscode` will install these tools automatically when you access a `golang` source code. 
+`vscode` extention for Go would require installing several Go tools, which can be done automatically by running [Go: Install/Update Tools](https://github.com/golang/vscode-go/blob/master/docs/commands.md#go-installupdate-tools) command in `vscode`.
 
-TODO: consider to include these tools in the Docker image by default. 
-
-```
-Installing 17 tools at /go/bin in module mode.
-  gocode
-  gopkgs
-  go-outline
-  go-symbols
-  guru
-  gorename
-  gotests
-  gomodifytags
-  impl
-  fillstruct
-  goplay
-  godoctor
-  dlv
-  gocode-gomod
-  godef
-  goreturns
-  golint
-```
+See details about these tools on [vscode-go's documentation](https://github.com/golang/vscode-go/blob/master/docs/tools.md).
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

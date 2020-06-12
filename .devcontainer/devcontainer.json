@@ -26,7 +26,7 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"ms-vscode.go",
+		"golang.go",
 		"donjayamanne.githistory",
 		"knisterpeter.vscode-commitizen"
 	],
@@ -44,5 +44,5 @@
 	// "postCreateCommand": "apt-get update && apt-get install -y git",
 
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "isong"
+	"remoteUser": "docker"
 }

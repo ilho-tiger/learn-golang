@@ -7,7 +7,7 @@ RUN apk add --no-cache --virtual .base \
 # fix sudo (https://github.com/sudo-project/sudo/issues/42)
 RUN echo "Set disable_coredump false" >> /etc/sudo.conf
 
-ARG USER=isong
+ARG USER=docker
 ENV HOME /home/$USER
 
 # timezone
