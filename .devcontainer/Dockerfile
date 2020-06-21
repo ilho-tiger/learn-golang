@@ -57,6 +57,7 @@ RUN go get github.com/mdempsky/gocode \
     && go get golang.org/x/tools/cmd/goimports \
     && go get golang.org/x/lint/golint \
     && go get golang.org/x/tools/gopls \
-    && go get github.com/stamblerre/gocode
+    && go get github.com/stamblerre/gocode \
+    && go get github.com/sqs/goreturns
 
 ENTRYPOINT [ "/bin/zsh" ] 
