@@ -7,8 +7,10 @@ const pi = 3.1415 // package level constant
 const (
 	first  = 1
 	second = "second"
+	third  // will assume same expression above => "second"
 ) // multi constant
 
+// iota is the "index" within the constant block
 const (
 	iotaFirst  = iota // 0
 	iotaSecond = iota // 1
@@ -27,7 +29,7 @@ const (
 
 func main() {
 	fmt.Println(pi)
-	fmt.Println(first, second)
+	fmt.Println(first, second, third)
 	fmt.Println(iotaFirst, iotaSecond) // everytime `iota` keyword being used, the value will be incremented by 1 (start with 0)
 	fmt.Println(constantExpressionFirst, constantExpressionSecond)
 	fmt.Println(implicitIotaFirst, implicitIotaSecond)
