@@ -1,15 +1,11 @@
 package main
 
 import (
-	"fmt"
-	"host/webservice/models"
+	"host/webservice/controllers"
+	"net/http"
 )
 
 func main() {
-	u := models.User{
-		ID:        2,
-		FirstName: "Ilho",
-		LastName:  "Song",
-	}
-	fmt.Println(u)
+	controllers.RegisterControllers()
+	http.ListenAndServe(":3000", nil) // passing nil signals to use default serve mux
 }
