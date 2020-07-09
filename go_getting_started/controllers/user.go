@@ -54,6 +54,7 @@ func (uc *userController) get(id int, w http.ResponseWriter) {
 	user, err := models.GetUserByID(id)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte(err.Error()))
 		return
 	}
 	encodeResponseAsJSON(user, w)

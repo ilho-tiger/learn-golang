@@ -9,6 +9,6 @@ import (
 func main() {
 	controllers.RegisterControllers()
 	port := 3000
-	fmt.Printf("Serving at the port %d ...", port)
-	http.ListenAndServe(fmt.Sprintf(":%d", port), nil) // passing nil signals to use default serve mux
+	fmt.Println("Serving at the port", port, "...")
+	http.ListenAndServe(fmt.Sprint(":", port), nil) // passing nil signals to use default serve mux
 }
