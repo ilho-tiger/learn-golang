@@ -5,6 +5,20 @@ import (
 	"strings"
 )
 
+// TwitterHandler is an alias for string
+// copies the fields and the methods sets over
+// type TwitterHandler = string
+
+// TwitterHandler is a type-declaration
+// copies the fileds of object over
+type TwitterHandler string
+
+// RedirectURL returns Twitter handler's homesite
+func (th TwitterHandler) RedirectURL() string {
+	cleanHandler := strings.TrimPrefix(string(th), "@")
+	return fmt.Sprintf("https://www.twitter.com/%s", cleanHandler)
+}
+
 // Identifiable is an interface
 type Identifiable interface {
 	ID() string
@@ -14,9 +28,10 @@ type Identifiable interface {
 type Person struct {
 	givenName      string
 	familyName     string
-	twitterHandler string
+	twitterHandler TwitterHandler
 }
 
+// NewPerson is
 func NewPerson(givenName, familyName string) Person {
 	return Person{
 		givenName:  givenName,
@@ -24,6 +39,7 @@ func NewPerson(givenName, familyName string) Person {
 	}
 }
 
+// FullName is
 func (p Person) FullName() string {
 	return fmt.Sprintf("%s %s", p.givenName, p.familyName)
 }
@@ -33,14 +49,16 @@ func (p Person) ID() string {
 	return "12345"
 }
 
-func (p *Person) SetTwitterHandler(handler string) error {
-	if len(handler) != 0 && !strings.HasPrefix(handler, "@") {
+// SetTwitterHandler is
+func (p *Person) SetTwitterHandler(handler TwitterHandler) error {
+	if len(handler) != 0 && !strings.HasPrefix(string(handler), "@") {
 		return fmt.Errorf("twitter handler must start with an @ symbol")
 	}
 	p.twitterHandler = handler
 	return nil
 }
 
-func (p Person) TwitterHandler() string {
+// TwitterHandler is
+func (p Person) TwitterHandler() TwitterHandler {
 	return p.twitterHandler
 }
