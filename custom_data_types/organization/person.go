@@ -9,7 +9,7 @@ import (
 // copies the fields and the methods sets over
 // type TwitterHandler = string
 
-// TwitterHandler is a type-declaration
+// TwitterHandler is a type-definition
 // copies the fileds of object over
 type TwitterHandler string
 
