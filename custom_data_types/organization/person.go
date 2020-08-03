@@ -24,24 +24,34 @@ type Identifiable interface {
 	ID() string
 }
 
+type Name struct {
+	given  string
+	family string
+}
+
+func (n Name) FullName() string {
+	return fmt.Sprintf("%s %s", n.given, n.family)
+}
+
+// Employee struct
+type Employee struct {
+	Name // embeded type
+}
+
 // Person is a struct
 type Person struct {
-	givenName      string
-	familyName     string
+	Name           // embeded type
 	twitterHandler TwitterHandler
 }
 
 // NewPerson is
 func NewPerson(givenName, familyName string) Person {
 	return Person{
-		givenName:  givenName,
-		familyName: familyName,
+		Name: Name{
+			given:  givenName,
+			family: familyName,
+		},
 	}
-}
-
-// FullName is
-func (p Person) FullName() string {
-	return fmt.Sprintf("%s %s", p.givenName, p.familyName)
 }
 
 // ID is a function of Person
