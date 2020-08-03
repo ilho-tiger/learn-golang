@@ -24,6 +24,7 @@ type Identifiable interface {
 	ID() string
 }
 
+// Citizen need comment
 type Citizen interface {
 	Identifiable
 	Country() string
@@ -31,6 +32,7 @@ type Citizen interface {
 
 type socialSecurityNumber string
 
+// NewSocialSecurityNumber needs comment
 func NewSocialSecurityNumber(value string) Citizen {
 	return socialSecurityNumber(value)
 }
@@ -48,6 +50,7 @@ type europeanUnionIdentifier struct {
 	country string
 }
 
+// NewEuropeanUnionIdentifier needs comment
 func NewEuropeanUnionIdentifier(value, country string) Citizen {
 	return europeanUnionIdentifier{
 		id:      value,
@@ -63,11 +66,13 @@ func (eui europeanUnionIdentifier) Country() string {
 	return fmt.Sprintf("EU: %s", eui.country)
 }
 
+// Name needs comment
 type Name struct {
 	given  string
 	family string
 }
 
+// FullName is
 func (n Name) FullName() string {
 	return fmt.Sprintf("%s %s", n.given, n.family)
 }
