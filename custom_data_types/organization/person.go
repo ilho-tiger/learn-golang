@@ -2,6 +2,7 @@ package organization
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -51,10 +52,25 @@ type europeanUnionIdentifier struct {
 }
 
 // NewEuropeanUnionIdentifier needs comment
-func NewEuropeanUnionIdentifier(value, country string) Citizen {
-	return europeanUnionIdentifier{
-		id:      value,
-		country: country,
+func NewEuropeanUnionIdentifier(id interface{}, country string) Citizen {
+	switch value := id.(type) {
+	case string:
+		return europeanUnionIdentifier{
+			id:      value,
+			country: country,
+		}
+	case int:
+		return europeanUnionIdentifier{
+			id:      strconv.Itoa(value),
+			country: country,
+		}
+	case europeanUnionIdentifier:
+		return value
+	case Person:
+		euID, _ := value.Citizen.(europeanUnionIdentifier)
+		return euID
+	default:
+		panic("Using an invalid type to initialze EU identifier")
 	}
 }
 
